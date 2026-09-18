@@ -1,0 +1,22 @@
+# dependencies
+node_modules/
+
+# build output
+.next/
+out/
+
+# environment / secrets
+.env
+.env.local
+.env*.local
+
+# generated artifacts
+website-audit-report.html
+
+# tooling
+.opencode/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.log
