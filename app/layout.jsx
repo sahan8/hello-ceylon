@@ -1,34 +1,32 @@
 import { Toaster } from 'react-hot-toast';
-import { Fraunces, Manrope } from 'next/font/google';
+import { DM_Sans, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 
-const display = Fraunces({
+const display = Space_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
-  style: ['normal', 'italic'],
-  axes: ['opsz', 'SOFT', 'WONK'],
 });
-const sans = Manrope({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const sans = DM_Sans({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Hello Ceylon';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Hello Ceylon | Private Sri Lanka Tours & Journeys',
-  description: 'Say hello to Sri Lanka. Private, locally guided tours, scenic transfers, and tailor-made journeys across the island — with live availability and simple booking.',
-  keywords: 'Hello Ceylon, Sri Lanka tours, private Sri Lanka guide, Ella tours, Sri Lanka taxi, Ceylon travel, tailor made Sri Lanka',
+  title: 'Hello Ceylon | Sri Lanka Trips & Day Tours',
+  description: 'Simple Sri Lanka trips, scenic transfers, local places, live availability, and easy booking from Ella.',
+  keywords: 'Hello Ceylon, Sri Lanka trips, Ella tours, Sri Lanka taxi, Ceylon travel, day tours Sri Lanka',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Hello Ceylon — Sri Lanka, one story at a time.',
-    description: 'Private, locally guided journeys across Sri Lanka with live availability and simple booking.',
+    description: 'Simple trips across Sri Lanka with local knowledge, live availability, and easy booking.',
     url: siteUrl,
     siteName,
     locale: 'en_US',
     type: 'website',
   },
-  twitter: { card: 'summary_large_image', title: 'Hello Ceylon', description: 'Private, locally guided journeys across Sri Lanka.' },
+  twitter: { card: 'summary_large_image', title: 'Hello Ceylon', description: 'Simple trips across Sri Lanka, one place at a time.' },
   robots: { index: true, follow: true },
 };
 
@@ -36,7 +34,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'TouristInformationCenter',
   name: siteName,
-  description: 'Private, locally guided tours and tailor-made journeys across Sri Lanka.',
+  description: 'Local trips, scenic transfers, and simple day tours across Sri Lanka.',
   url: siteUrl,
   areaServed: { '@type': 'Country', name: 'Sri Lanka' },
 };

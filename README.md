@@ -1,6 +1,6 @@
 # Hello Ceylon
 
-A production-ready Next.js private tours booking website for Sri Lanka — formerly Serendib Tours, rebranded with a mobile-first, editorial "living postcard" design system.
+A production-ready Next.js Sri Lanka trips and day tours website with a mobile-first, editorial "living postcard" design system.
 
 ## Tech Stack
 
@@ -62,6 +62,16 @@ mongod
 npm run dev
 ```
 
+### Seed the researched packages
+
+After MongoDB is running, add the 15 researched Ella and Sri Lanka packages to the database:
+
+```bash
+npm run seed:packages
+```
+
+This creates or updates the packages with local images, descriptions, locations, highlights, inclusions, capacity, and LKR pricing. Yala and Udawalawe remain "price on request" until confirmed.
+
 ### 6. Access the Website
 
 - Main site: http://localhost:3000
@@ -71,9 +81,12 @@ npm run dev
 ## Features
 
 - Live tour catalogue with per-person pricing (server-calculated)
+- Simple admin package manager for adding, editing, and removing journeys
+- Admin photo upload with JPG/PNG/WebP validation and a rotating public gallery
 - Availability calendar with real-time booked/blocked dates
 - Three-step booking form with validation and booking references
 - Double-booking prevention enforced server-side
+- Bank transfer payment instructions shared securely after booking confirmation
 - WhatsApp + email notifications to guide and guest
 - Rate-limited booking and login endpoints
 - Secure admin dashboard (server-side sessions, authorized mutations)
@@ -84,15 +97,16 @@ npm run dev
 ## Project Structure
 
 ```
-serendib-tours/
+hello-ceylon/
 ├── app/
 │   ├── layout.jsx          # Root layout: fonts, SEO, JSON-LD
 │   ├── page.jsx            # Main landing page composition
 │   ├── globals.css         # Design tokens & global styles
-│   ├── admin/              # Admin dashboard (noindex)
+│   ├── admin/              # Simple admin dashboard (noindex)
 │   └── api/
 │       ├── bookings/       # Booking API (rate-limited, validated)
 │       ├── tours/          # Tours API (public read, admin write)
+│       ├── gallery/        # Gallery API (public read, admin upload/delete)
 │       ├── availability/   # Availability API (public read, admin write)
 │       ├── whatsapp/       # Notification API (admin only)
 │       └── admin/          # Login / session / logout
@@ -107,15 +121,15 @@ serendib-tours/
 
 - **Brand**: Hello Ceylon — "Sri Lanka, one story at a time."
 - **Concept**: A living postcard of the island — editorial, botanical, cinematic
-- **Colors**: Canopy green (#0C3B2E), Ceylon gold (#A16207 / #E3B23C), Cinnamon (#B34A2B), Shell ivory (#FAF7F0)
-- **Fonts**: Fraunces (display, with SOFT/WONK axes), Manrope (body)
+- **Colors**: Canopy green (#0E4638), Ceylon gold (#966100 / #D9AA3C), Cinnamon (#A9462F), Shell ivory (#FCFAF5)
+- **Fonts**: Space Grotesk (display), DM Sans (body)
 - **Motion**: Ken Burns hero, parallax layers, draw-on route lines, staggered reveals — all `prefers-reduced-motion` safe
 - **Source of truth**: `design-system/hello-ceylon/MASTER.md`
 
 ## Security Notes
 
 - Admin password is never embedded in client code; sessions are HMAC-signed HTTP-only cookies (8h expiry, SameSite=strict)
-- All admin API mutations require a valid session; public users can only read tours/availability and create validated bookings
+- All admin API mutations require a valid session; public users can only read active tours/gallery/availability and create validated bookings
 - Prices are calculated from the database by tour ID — never trusted from the client
 - Booking and login endpoints are rate-limited per IP
 - API errors return generic messages; details are logged server-side only

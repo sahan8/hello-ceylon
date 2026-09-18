@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
@@ -27,25 +26,29 @@ export default function Hero() {
           animate={{ scale: 1 }}
           transition={{ duration: reduceMotion ? 0 : 2.4, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Image
-            src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1800&q=88"
-            alt="A blue train crossing the Nine Arch Bridge through the forests of Ella, Sri Lanka"
-            fill
-            priority
-            unoptimized
-            sizes="100vw"
-            className="object-cover object-[62%_center] sm:object-center"
-          />
+          <video
+            className="h-full w-full object-cover object-center"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Cinematic views of Sri Lanka"
+          >
+            <source src="/videos/hero-desktop.mp4" media="(min-width: 640px)" type="video/mp4" />
+            <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+          </video>
         </motion.div>
       </motion.div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,35,27,.92)_0%,rgba(6,35,27,.62)_42%,rgba(6,35,27,.18)_75%,rgba(6,35,27,.42)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,35,27,.45)_0%,transparent_26%,transparent_62%,rgba(6,35,27,.95)_100%)]" />
+       <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,35,27,.92)_0%,rgba(6,35,27,.62)_42%,rgba(6,35,27,.18)_75%,rgba(6,35,27,.42)_100%)]" />
+       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,35,27,.45)_0%,transparent_26%,transparent_62%,rgba(6,35,27,.95)_100%)]" />
+       <div className="tech-grid pointer-events-none absolute inset-x-0 top-0 h-3/4 opacity-70" aria-hidden="true" />
 
       <div className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-gold-bright/10 blur-3xl animate-drift" aria-hidden="true" />
-      <div className="pointer-events-none absolute -right-32 bottom-1/3 h-[28rem] w-[28rem] rounded-full bg-canopy-600/20 blur-3xl animate-drift" style={{ animationDelay: '-7s' }} aria-hidden="true" />
+       <div className="pointer-events-none absolute -right-32 bottom-1/3 h-[28rem] w-[28rem] rounded-full bg-lagoon/20 blur-3xl animate-drift" style={{ animationDelay: '-7s' }} aria-hidden="true" />
 
-      <svg className="absolute inset-y-0 right-0 hidden h-full w-[42%] opacity-20 lg:block" viewBox="0 0 700 900" fill="none" aria-hidden="true">
+       <svg className="absolute inset-y-0 right-0 hidden h-full w-[42%] opacity-20 lg:block" viewBox="0 0 700 900" fill="none" aria-hidden="true">
         <motion.path
           d="M770 90C570 55 430 150 455 282c26 137 208 121 178 272-28 140-230 137-256 287"
           stroke="#E3B23C" strokeWidth="1.5" strokeDasharray="4 8"
@@ -58,13 +61,23 @@ export default function Hero() {
           initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
           transition={{ duration: reduceMotion ? 0 : 3.4, ease: 'easeInOut', delay: 0.9 }}
         />
-      </svg>
+       </svg>
+
+       <motion.div
+         aria-hidden="true"
+         className="soft-glow pointer-events-none absolute right-[9%] top-[31%] hidden h-40 w-40 rounded-full border border-gold-bright/30 lg:block"
+         animate={reduceMotion ? {} : { rotate: 360 }}
+         transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+       >
+         <span className="absolute -right-1 top-1/2 h-2 w-2 rounded-full bg-gold-bright shadow-[0_0_18px_4px_rgba(217,170,60,0.8)]" />
+         <span className="absolute inset-5 rounded-full border border-lagoon/50" />
+       </motion.div>
 
       <motion.div style={{ y: contentY, opacity: fade }} className="container-premium relative z-10 flex flex-1 flex-col justify-center pb-40 pt-36 sm:pb-44">
         <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.13 }} className="max-w-4xl">
           <motion.div variants={reveal} transition={{ duration: 0.65 }} className="mb-7 flex items-center gap-3">
             <span className="h-px w-12 bg-gold-bright" aria-hidden="true" />
-            <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-gold-bright">Private journeys · Sri Lanka</span>
+           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright">Made for Sri Lanka</span>
           </motion.div>
 
           <motion.h1 variants={reveal} transition={{ duration: 0.85 }} id="hero-title" className="display-title max-w-[12ch] text-white">
@@ -75,7 +88,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={reveal} transition={{ duration: 0.7 }} className="mt-7 max-w-xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
-            The island you came for is waiting beyond the guidebook — misty rail lines, hidden waterfalls, leopard country, and quiet tea hills. Travel it privately, at your own rhythm, with a local who calls it home.
+             Tea hills, waterfalls, wildlife and coastlines. Choose a place, pick a date, and let the island do the rest.
           </motion.p>
 
           <motion.div variants={reveal} transition={{ duration: 0.7 }} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -102,13 +115,13 @@ export default function Hero() {
         transition={{ delay: reduceMotion ? 0 : 1, duration: 0.8 }}
         className="absolute inset-x-0 bottom-0 z-10 border-t border-white/12 bg-canopy-950/60 backdrop-blur-md"
       >
-        <div className="container-premium grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+         <div className="container-premium flex snap-x snap-mandatory overflow-x-auto divide-x divide-white/10 sm:grid sm:grid-cols-3 sm:divide-x sm:divide-y-0 no-scrollbar">
           {[
-            ['01', 'Private by design', 'Every journey shaped around your pace, not a group schedule.'],
-            ['02', 'Guided by locals', 'Firsthand island knowledge, hidden places included.'],
-            ['03', 'Simple to arrange', 'Pick a journey and a date — we confirm personally.'],
+             ['01', 'Made for your pace', 'Keep the day open for the places you enjoy.'],
+             ['02', 'Local knowledge', 'Useful stops, honest tips, and routes that make sense.'],
+             ['03', 'Easy to arrange', 'Pick a place and date. We will confirm the details.'],
           ].map(([number, title, text]) => (
-            <div key={number} className="hidden min-h-24 items-center gap-4 px-5 py-4 first:flex sm:flex lg:px-8">
+            <div key={number} className="flex min-h-24 min-w-[86vw] snap-start items-center gap-4 px-5 py-4 sm:min-w-0 lg:px-8">
               <span className="font-display text-2xl italic text-gold-bright">{number}</span>
               <div>
                 <p className="text-sm font-bold text-white">{title}</p>

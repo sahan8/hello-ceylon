@@ -20,6 +20,9 @@ export default function BookingForm({ selectedDate: initialDate }) {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', specialRequests: '' });
   const [errors, setErrors] = useState({});
 
+  const selectedTourDetails = tours.find(tour => tour._id === selectedTour);
+  const formatPrice = tour => tour?.priceOnRequest || tour?.price === 0 ? 'Price on request' : `${tour?.currency || 'USD'} ${Number(tour.price).toLocaleString()}`;
+
   useEffect(() => {
     setToursError('');
     fetch('/api/tours')
@@ -101,7 +104,7 @@ export default function BookingForm({ selectedDate: initialDate }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="font-display text-3xl text-white">Thank you, {bookingName}!</h3>
+            <h3 className="font-display text-2xl text-white">Thank you, {bookingName}!</h3>
             <p className="mt-3 text-white/70">Your journey request has been received.</p>
             <p className="text-white/70">You&apos;ll receive a personal confirmation within 24 hours.</p>
             {bookingReference && (
@@ -136,7 +139,7 @@ export default function BookingForm({ selectedDate: initialDate }) {
           eyebrow="Book now"
           title="Reserve your"
           accent="Ceylon story."
-          description="Three quick steps. Your guide confirms personally within 24 hours — no prepayment needed."
+          description="Three quick steps. Your guide confirms personally within 24 hours — no payment details needed to request a booking."
         />
 
         <div className="mx-auto max-w-2xl">
@@ -201,7 +204,7 @@ export default function BookingForm({ selectedDate: initialDate }) {
                     >
                       <option value="">Choose your journey...</option>
                       {tours.map(tour => (
-                        <option key={tour._id} value={tour._id}>{tour.name} — ${tour.price}</option>
+                        <option key={tour._id} value={tour._id}>{tour.name} — {formatPrice(tour)}</option>
                       ))}
                     </select>
                     {toursError && <p className="mt-2 text-sm text-cinnamon" role="alert">{toursError}</p>}
@@ -246,11 +249,11 @@ export default function BookingForm({ selectedDate: initialDate }) {
                     <ReviewRow label="Name" value={formData.name} />
                     <ReviewRow label="Email" value={formData.email} />
                     <ReviewRow label="Phone" value={formData.phone} />
-                    <ReviewRow label="Journey" value={tours.find(tour => tour._id === selectedTour)?.name || 'Not selected'} />
+                     <ReviewRow label="Journey" value={selectedTourDetails?.name || 'Not selected'} />
                     <ReviewRow label="Date" value={selectedDate ? selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) : 'Not selected'} />
                     <ReviewRow label="People" value={`${people} ${people === 1 ? 'person' : 'people'}`} />
                     <div className="border-t border-dashed border-line pt-4">
-                      <ReviewRow label="Estimated total" value={`$${(tours.find(tour => tour._id === selectedTour)?.price || 0) * people} USD`} strong />
+                       <ReviewRow label="Estimated total" value={selectedTourDetails?.priceOnRequest || selectedTourDetails?.price === 0 ? 'Price on request' : `${selectedTourDetails?.currency || 'USD'} ${((selectedTourDetails?.price || 0) * people).toLocaleString()}`} strong />
                     </div>
                   </div>
 

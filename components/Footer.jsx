@@ -24,9 +24,9 @@ export default function Footer() {
               <LogoMark size={40} />
               <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-gold-bright">Hello Ceylon</p>
             </div>
-            <h2 className="mt-7 max-w-2xl font-display text-5xl leading-[1.02] sm:text-6xl">
-              The island is calling.
-              <span className="block italic text-gold-bright">Say hello back.</span>
+             <h2 className="mt-7 max-w-2xl font-display text-4xl leading-[1.08] sm:text-5xl">
+               Your next view is waiting.
+               <span className="block italic text-gold-bright">Say hello.</span>
             </h2>
             <Link
               href="#book"
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[13.5vw] leading-[0.72] tracking-[-0.04em] text-white/[0.04]" aria-hidden="true">
+       <div className="pointer-events-none select-none whitespace-nowrap text-center font-display text-[9vw] leading-[0.8] tracking-[-0.03em] text-white/[0.04]" aria-hidden="true">
         HELLO CEYLON
       </div>
     </footer>

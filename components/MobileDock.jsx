@@ -43,7 +43,7 @@ export default function MobileDock() {
               href="#tours"
               className="flex h-12 flex-1 items-center justify-center rounded-xl border border-white/20 text-sm font-bold text-white transition-colors hover:bg-white/10"
             >
-              Journeys
+              Explore
             </Link>
             <Link
               href="#book"

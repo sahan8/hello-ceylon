@@ -18,35 +18,35 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#1C1917` | `--color-primary` |
+| Primary | `#0E4638` | `--color-primary` |
 | On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#44403C` | `--color-secondary` |
+| Secondary | `#286B78` | `--color-secondary` |
 | On Secondary | `#FFFFFF` | `--color-on-secondary` |
-| Accent/CTA | `#A16207` | `--color-accent` |
+| Accent/CTA | `#966100` | `--color-accent` |
 | On Accent/CTA | `#FFFFFF` | `--color-on-accent` |
-| Background | `#FAFAF9` | `--color-background` |
-| Foreground | `#0C0A09` | `--color-foreground` |
+| Background | `#FCFAF5` | `--color-background` |
+| Foreground | `#193027` | `--color-foreground` |
 | Card | `#FFFFFF` | `--color-card` |
-| Card Foreground | `#0C0A09` | `--color-card-foreground` |
-| Muted | `#E8ECF0` | `--color-muted` |
-| Muted Foreground | `#475569` | `--color-muted-foreground` |
-| Border | `#D6D3D1` | `--color-border` |
+| Card Foreground | `#193027` | `--color-card-foreground` |
+| Muted | `#F1EBDD` | `--color-muted` |
+| Muted Foreground | `#4F6258` | `--color-muted-foreground` |
+| Border | `#DED8CA` | `--color-border` |
 | Destructive | `#DC2626` | `--color-destructive` |
 | On Destructive | `#FFFFFF` | `--color-on-destructive` |
-| Ring | `#1C1917` | `--color-ring` |
+| Ring | `#966100` | `--color-ring` |
 
-**Color Notes:** Premium dark + gold accent [Accent adjusted from #CA8A04]
+**Color Notes:** Island-inspired canopy green, readable gold, warm shell ivory, and lagoon blue.
 
 ### Typography
 
-- **Heading Font:** Cormorant
-- **Body Font:** Montserrat
-- **Mood:** luxury, high-end, fashion, elegant, refined, premium
-- **Google Fonts:** [Cormorant + Montserrat](https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap)
+- **Heading Font:** Space Grotesk
+- **Body Font:** DM Sans
+- **Mood:** clear, modern, welcoming, lightly futuristic, travel-first
+- **Google Fonts:** Space Grotesk + DM Sans via `next/font/google`
 
 **CSS Import:**
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Fonts are loaded through next/font/google in app/layout.jsx. */
 ```
 
 ### Spacing Variables
@@ -79,7 +79,7 @@
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #A16207;
+  background: #966100;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -96,8 +96,8 @@
 /* Secondary Button */
 .btn-secondary {
   background: transparent;
-  color: #1C1917;
-  border: 2px solid #1C1917;
+  color: #193027;
+  border: 2px solid #193027;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;
@@ -136,9 +136,9 @@
 }
 
 .input:focus {
-  border-color: #1C1917;
+  border-color: #0E4638;
   outline: none;
-  box-shadow: 0 0 0 3px #1C191720;
+  box-shadow: 0 0 0 3px #96610020;
 }
 ```
 

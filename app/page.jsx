@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Marquee from '../components/Marquee';
 import About from '../components/About';
+import Gallery from '../components/Gallery';
 import Tours from '../components/Tours';
 import AvailabilityCalendar from '../components/AvailabilityCalendar';
 import BookingForm from '../components/BookingForm';
@@ -53,6 +54,7 @@ export default function Home() {
       <Marquee />
       <About />
       <Tours />
+      <Gallery />
       <AvailabilityCalendar onSelectDate={handleDateSelect} />
       <BookingForm selectedDate={selectedDate} />
       <Payment />

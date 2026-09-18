@@ -21,9 +21,9 @@ export default function MapSection() {
           <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
             <SectionHeading
               eyebrow="Start a conversation"
-              title="Have a journey"
-              accent="in mind?"
-              description={`Send your preferred dates and interests. ${guideName} will respond directly and help shape the right experience before you confirm anything.`}
+               title="Ready to go?"
+               accent="Let's plan it."
+               description={`Send your dates and interests. ${guideName} will reply with a clear plan before you confirm anything.`}
             />
             <motion.div whileHover={{ y: -3 }} whileTap={{ scale: 0.98 }} className="flex flex-col gap-3">
               {number ? (

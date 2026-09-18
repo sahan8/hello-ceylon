@@ -1,12 +1,13 @@
 {
-  "name": "serendib-tours",
+  "name": "hello-ceylon",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "seed:packages": "node --env-file=.env.local scripts/seed-packages.mjs"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",

@@ -19,7 +19,38 @@ const tourSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: [true, 'Tour price is required'],
-    min: [0, 'Price must be a positive number'],
+    min: [0, 'Price cannot be negative'],
+  },
+  currency: {
+    type: String,
+    enum: ['LKR', 'USD'],
+    default: 'USD',
+  },
+  priceOnRequest: {
+    type: Boolean,
+    default: false,
+  },
+  capacity: {
+    type: Number,
+    min: 1,
+    max: 50,
+    default: 3,
+  },
+  image: {
+    type: String,
+    trim: true,
+  },
+  locations: {
+    type: [String],
+    default: [],
+  },
+  highlights: {
+    type: [String],
+    default: [],
+  },
+  inclusions: {
+    type: [String],
+    default: [],
   },
   icon: {
     type: String,

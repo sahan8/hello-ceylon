@@ -50,6 +50,7 @@ export default function Navbar() {
     { href: '#story', label: 'Our Story' },
     { href: '#tours', label: 'Journeys' },
     { href: '#availability', label: 'Availability' },
+    { href: '#gallery', label: 'Gallery' },
     { href: '#reviews', label: 'Reviews' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -73,9 +74,6 @@ export default function Navbar() {
             <span className={`block font-display text-xl tracking-tight transition-colors duration-500 ${isScrolled ? 'text-ink' : 'text-white'}`}>
               Hello Ceylon
             </span>
-            <span className={`mt-1 block text-[10px] font-bold uppercase tracking-[0.28em] transition-colors duration-500 ${isScrolled ? 'text-moss' : 'text-white/70'}`}>
-              Sri Lanka, privately
-            </span>
           </span>
         </Link>
 
@@ -95,6 +93,10 @@ export default function Navbar() {
               )}
             </Link>
           ))}
+          <span className={`ml-3 inline-flex items-center gap-2 rounded-full border px-3 py-2 text-[10px] font-bold uppercase tracking-[0.12em] ${isScrolled ? 'border-canopy/10 bg-canopy-50/70 text-canopy' : 'border-white/20 bg-white/10 text-white/85'}`} title="Availability is checked when you book">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-canopy-600" aria-hidden="true" />
+            Open dates
+          </span>
           <Link
             href="#book"
             className={`ml-3 inline-flex min-h-11 items-center rounded-full px-6 text-sm font-bold transition-all duration-300 hover:-translate-y-0.5 ${
@@ -145,7 +147,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-between rounded-2xl px-4 py-4 font-display text-3xl text-shell transition-colors hover:bg-white/5 hover:text-gold-bright"
+                    className="flex items-center justify-between rounded-2xl px-4 py-3.5 font-display text-xl text-shell transition-colors hover:bg-white/5 hover:text-gold-bright"
                   >
                     {link.label}
                     <span aria-hidden="true" className="text-lg text-gold-bright/60">→</span>

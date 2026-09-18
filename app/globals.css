@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: #FAF7F0;
-  --surface: #FFFDF8;
+  --background: #FCFAF5;
+  --surface: #FFFFFF;
   --surface-elevated: #FFFFFF;
-  --foreground: #14211B;
-  --foreground-muted: #55645B;
-  --primary: #0C3B2E;
-  --primary-hover: #06231B;
-  --accent: #A16207;
-  --accent-bright: #E3B23C;
-  --cinnamon: #B34A2B;
-  --border: #E3DDCF;
-  --focus: #A16207;
-  --success: #146149;
+  --foreground: #193027;
+  --foreground-muted: #4F6258;
+  --primary: #0E4638;
+  --primary-hover: #082B23;
+  --accent: #966100;
+  --accent-bright: #D9AA3C;
+  --cinnamon: #A9462F;
+  --border: #DED8CA;
+  --focus: #966100;
+  --success: #1A705A;
   --warning: #8A5A00;
   --error: #B3261E;
-  --shell: #FAF7F0;
-  --parchment: #F3EEE1;
-  --canopy: #0C3B2E;
-  --gold: #A16207;
-  --ink: #14211B;
-  --moss: #55645B;
+  --shell: #FCFAF5;
+  --parchment: #F1EBDD;
+  --canopy: #0E4638;
+  --gold: #966100;
+  --ink: #193027;
+  --moss: #4F6258;
 }
 
 * {
@@ -40,6 +40,8 @@ body {
   font-family: var(--font-sans), sans-serif;
   color: var(--ink);
   background-color: var(--shell);
+  font-size: 16px;
+  line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -70,23 +72,21 @@ body {
 
 .display-title {
   font-family: var(--font-display), serif;
-  font-variation-settings: 'opsz' 144, 'SOFT' 30, 'WONK' 0;
-  font-size: clamp(3.1rem, 8.5vw, 7.5rem);
-  line-height: 0.94;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.65rem, 7vw, 5.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
   text-wrap: balance;
 }
 
 .section-title {
   font-family: var(--font-display), serif;
-  font-variation-settings: 'opsz' 100, 'SOFT' 40, 'WONK' 0;
-  font-size: clamp(2.3rem, 5vw, 4.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.95rem, 4.5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
-.wonk { font-variation-settings: 'opsz' 144, 'SOFT' 100, 'WONK' 1; }
+.wonk { letter-spacing: -0.04em; }
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--parchment); }
@@ -217,3 +217,18 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover { filter: invert(0.1
     radial-gradient(circle at 15% 20%, rgba(161, 98, 7, 0.05) 0, transparent 32%),
     radial-gradient(circle at 85% 75%, rgba(12, 59, 46, 0.05) 0, transparent 36%);
 }
+
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(217, 170, 60, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 170, 60, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, transparent, black 24%, black 76%, transparent);
+}
+
+.soft-glow {
+  box-shadow: 0 0 0 1px rgba(217, 170, 60, 0.2), 0 0 34px rgba(40, 107, 120, 0.2);
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

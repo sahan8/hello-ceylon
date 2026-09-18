@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import SectionHeading from './ui/SectionHeading';
 import { DataState, SkeletonCards } from './ui/States';
@@ -15,6 +16,11 @@ function StampIcon() {
       <path d="M3 8l9 6 9-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
+}
+
+function formatPrice(tour) {
+  if (tour.priceOnRequest || tour.price === 0) return 'Price on request';
+  return `${tour.currency || 'USD'} ${Number(tour.price).toLocaleString()}`;
 }
 
 export default function Tours() {
@@ -43,7 +49,7 @@ export default function Tours() {
       <div className="container-premium relative">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
           <div id="tours-title">
-            <SectionHeading eyebrow="Choose your journey" title="See more." accent="Travel deeper." />
+             <SectionHeading eyebrow="Choose a place" title="Find your" accent="next view." />
           </div>
           <p className="max-w-2xl text-base leading-7 text-moss lg:justify-self-end">
             Every experience below comes from the live catalogue — real pricing, real duration, confirmed personally. Pick one, or use it as the starting point for something tailor-made.
@@ -70,8 +76,14 @@ export default function Tours() {
                   key={tour._id}
                   variants={revealUp}
                   transition={{ duration: reduceMotion ? 0 : motionTokens.duration.reveal, ease: motionTokens.ease.out }}
-                  className="card-lift group relative flex min-h-[380px] flex-col overflow-hidden rounded-[1.75rem] border border-line bg-white p-7"
+                  className="card-lift group relative flex min-h-[480px] flex-col overflow-hidden rounded-[1.75rem] border border-line bg-white p-7"
                 >
+                  {tour.image && (
+                    <div className="relative -mx-7 -mt-7 mb-7 h-48 overflow-hidden bg-parchment">
+                      <Image src={tour.image} alt={tour.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" aria-hidden="true" />
+                    </div>
+                  )}
                   <div className="absolute right-0 top-0 h-28 w-28 rounded-bl-full bg-gradient-to-bl from-gold/15 to-transparent" aria-hidden="true" />
                   <div className="absolute right-5 top-5 opacity-70 transition-transform duration-500 group-hover:rotate-12" aria-hidden="true">
                     <StampIcon />
@@ -89,6 +101,16 @@ export default function Tours() {
                   <div className="mt-10 flex-1">
                     <h3 className="font-display text-[1.9rem] leading-[1.05] text-ink">{tour.name}</h3>
                     <p className="mt-4 line-clamp-3 text-sm leading-6 text-moss">{tour.description}</p>
+                    {(tour.locations?.length > 0 || tour.highlights?.length > 0 || tour.inclusions?.length > 0) && (
+                      <details className="mt-4 rounded-xl bg-parchment/70 px-4 py-3 text-sm text-moss">
+                        <summary className="cursor-pointer font-bold text-canopy">View package details</summary>
+                        <div className="mt-3 space-y-3 text-xs leading-5">
+                          {tour.locations?.length > 0 && <div><strong className="text-ink">Places:</strong> {tour.locations.slice(0, 4).join(' · ')}</div>}
+                          {tour.highlights?.length > 0 && <div><strong className="text-ink">Highlights:</strong> {tour.highlights.slice(0, 3).join(' · ')}</div>}
+                          {tour.inclusions?.length > 0 && <div><strong className="text-ink">Includes:</strong> {tour.inclusions.slice(0, 3).join(' · ')}</div>}
+                        </div>
+                      </details>
+                    )}
                   </div>
 
                   <div className="mt-8 border-t border-dashed border-line pt-5">
@@ -99,7 +121,7 @@ export default function Tours() {
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-moss">Per person</p>
-                        <p className="mt-1 font-display text-3xl text-canopy">${tour.price}</p>
+                        <p className={`mt-1 font-display ${tour.priceOnRequest || tour.price === 0 ? 'text-lg' : 'text-2xl'} text-canopy`}>{formatPrice(tour)}</p>
                       </div>
                     </div>
                     <a

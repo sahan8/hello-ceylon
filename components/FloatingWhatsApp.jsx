@@ -13,7 +13,7 @@ export default function FloatingWhatsApp() {
   }, []);
 
   const whatsappLink = whatsappNumber
-    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello Ceylon! I found your site and want to plan a journey.')}`
+    ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello Ceylon! I would like to explore Sri Lanka.')}`
     : null;
 
   return (

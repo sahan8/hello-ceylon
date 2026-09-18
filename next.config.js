@@ -11,7 +11,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://images.unsplash.com",
+      "img-src 'self' data:",
       "font-src 'self'",
       "connect-src 'self'",
       "frame-ancestors 'none'",
@@ -22,14 +22,6 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
-  },
   turbopack: {},
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];

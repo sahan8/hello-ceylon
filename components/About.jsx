@@ -6,7 +6,7 @@ import { motionTokens, revealUp } from '../lib/motion';
 
 const principles = [
   ['A journey with context', 'Go beyond a list of stops — understand the places, the people, and the stories you travel through.'],
-  ['Space to travel well', 'Private guiding gives the day room to breathe: linger at a viewpoint, skip a crowd, follow a recommendation.'],
+  ['Space to travel well', 'Keep the day flexible: linger at a viewpoint, skip a crowd, or follow a good local recommendation.'],
   ['A direct conversation', 'Your request goes straight to your guide for a personal confirmation — no call centres, no middlemen.'],
 ];
 
@@ -41,8 +41,8 @@ export default function About() {
           </svg>
 
           <div className="relative flex h-full min-h-[400px] flex-col justify-between">
-            <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright/90">The guide behind the journey</p>
-            <blockquote className="max-w-md font-display text-4xl leading-[1.08] sm:text-5xl">
+             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright/90">A local point of view</p>
+            <blockquote className="max-w-md font-display text-3xl leading-[1.12] sm:text-4xl">
               “A good journey leaves <em className="wonk not-italic text-gold-bright">space</em> for the island to surprise you.”
             </blockquote>
             <div className="flex items-center gap-4">
@@ -57,10 +57,10 @@ export default function About() {
 
         <div>
           <SectionHeading
-            eyebrow="Travel personally"
-            title="Meet the person"
-            accent="guiding your story."
-            description="Hello Ceylon is built around a direct, personal guiding experience — not an anonymous itinerary marketplace. You plan with the person who will actually drive, walk, and explore alongside you."
+             eyebrow="Local point of view"
+             title="See the island"
+             accent="with context."
+             description="Good places are better with a little context. Get practical local tips, clear plans, and room to make the day your own."
           />
           <motion.div
             initial="hidden"
