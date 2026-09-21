@@ -83,10 +83,9 @@ This creates or updates the packages with local images, descriptions, locations,
 - Live tour catalogue with per-person pricing (server-calculated)
 - Simple admin package manager for adding, editing, and removing journeys
 - Admin photo upload with JPG/PNG/WebP validation and a rotating public gallery
-- Availability calendar with real-time booked/blocked dates
 - Three-step booking form with validation and booking references
 - Double-booking prevention enforced server-side
-- Bank transfer payment instructions shared securely after booking confirmation
+- Payment arranged directly with the client after booking confirmation
 - WhatsApp + email notifications to guide and guest
 - Rate-limited booking and login endpoints
 - Secure admin dashboard (server-side sessions, authorized mutations)
@@ -121,7 +120,7 @@ hello-ceylon/
 
 - **Brand**: Hello Ceylon — "Sri Lanka, one story at a time."
 - **Concept**: A living postcard of the island — editorial, botanical, cinematic
-- **Colors**: Canopy green (#0E4638), Ceylon gold (#966100 / #D9AA3C), Cinnamon (#A9462F), Shell ivory (#FCFAF5)
+- **Colors**: Midnight navy (#102A43), ocean blue (#1F5A78), warm saffron (#A66A12 / #F2B84B), coral (#D46A5A), shell ivory (#FBF8F1)
 - **Fonts**: Space Grotesk (display), DM Sans (body)
 - **Motion**: Ken Burns hero, parallax layers, draw-on route lines, staggered reveals — all `prefers-reduced-motion` safe
 - **Source of truth**: `design-system/hello-ceylon/MASTER.md`

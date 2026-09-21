@@ -30,14 +30,14 @@ export default function About() {
             ))}
             <motion.path
               d="M110 510C185 380 185 240 312 105"
-              stroke="#E3B23C" strokeWidth="2.5" strokeDasharray="5 11"
+               stroke="#53D5D4" strokeWidth="2.5" strokeDasharray="5 11"
               initial={{ pathLength: 0 }}
               whileInView={{ pathLength: 1 }}
               viewport={{ once: true }}
               transition={{ duration: reduceMotion ? 0 : 2.2, ease: 'easeInOut' }}
             />
-            <circle cx="111" cy="510" r="7" fill="#E3B23C" />
-            <circle cx="312" cy="105" r="7" fill="#E3B23C" />
+             <circle cx="111" cy="510" r="7" fill="#53D5D4" />
+             <circle cx="312" cy="105" r="7" fill="#53D5D4" />
           </svg>
 
           <div className="relative flex h-full min-h-[400px] flex-col justify-between">

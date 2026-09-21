@@ -1,13 +1,16 @@
 import { Toaster } from 'react-hot-toast';
-import { DM_Sans, Space_Grotesk } from 'next/font/google';
+import { Cormorant_Garamond, DM_Mono, DM_Sans } from 'next/font/google';
 import './globals.css';
 
-const display = Space_Grotesk({
+const display = Cormorant_Garamond({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 });
 const sans = DM_Sans({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const mono = DM_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap', weight: ['400', '500'] });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Hello Ceylon';
@@ -42,7 +45,7 @@ const jsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${display.variable} ${sans.variable} font-sans`}>
+      <body className={`${display.variable} ${sans.variable} ${mono.variable} font-sans`}>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -50,8 +53,8 @@ export default function RootLayout({ children }) {
           position="top-center"
           toastOptions={{
             style: {
-              background: '#14211B',
-              color: '#FAF7F0',
+              background: '#102A43',
+              color: '#FBF8F1',
               fontFamily: 'var(--font-sans)',
               borderRadius: '14px',
               padding: '12px 18px',

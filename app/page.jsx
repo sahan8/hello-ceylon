@@ -7,7 +7,6 @@ import Marquee from '../components/Marquee';
 import About from '../components/About';
 import Gallery from '../components/Gallery';
 import Tours from '../components/Tours';
-import AvailabilityCalendar from '../components/AvailabilityCalendar';
 import BookingForm from '../components/BookingForm';
 import Payment from '../components/Payment';
 import Testimonials from '../components/Testimonials';
@@ -18,7 +17,6 @@ import MobileDock from '../components/MobileDock';
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     let ticking = false;
@@ -36,11 +34,6 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDateSelect = (date) => {
-    setSelectedDate(date);
-    document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <main id="main-content" className="min-h-screen" tabIndex={-1}>
       <div
@@ -55,8 +48,7 @@ export default function Home() {
       <About />
       <Tours />
       <Gallery />
-      <AvailabilityCalendar onSelectDate={handleDateSelect} />
-      <BookingForm selectedDate={selectedDate} />
+      <BookingForm />
       <Payment />
       <Testimonials />
       <MapSection />

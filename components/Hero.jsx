@@ -41,43 +41,28 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-       <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,35,27,.92)_0%,rgba(6,35,27,.62)_42%,rgba(6,35,27,.18)_75%,rgba(6,35,27,.42)_100%)]" />
-       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,35,27,.45)_0%,transparent_26%,transparent_62%,rgba(6,35,27,.95)_100%)]" />
-       <div className="tech-grid pointer-events-none absolute inset-x-0 top-0 h-3/4 opacity-70" aria-hidden="true" />
-
-      <div className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-gold-bright/10 blur-3xl animate-drift" aria-hidden="true" />
-       <div className="pointer-events-none absolute -right-32 bottom-1/3 h-[28rem] w-[28rem] rounded-full bg-lagoon/20 blur-3xl animate-drift" style={{ animationDelay: '-7s' }} aria-hidden="true" />
-
-       <svg className="absolute inset-y-0 right-0 hidden h-full w-[42%] opacity-20 lg:block" viewBox="0 0 700 900" fill="none" aria-hidden="true">
-        <motion.path
-          d="M770 90C570 55 430 150 455 282c26 137 208 121 178 272-28 140-230 137-256 287"
-          stroke="#E3B23C" strokeWidth="1.5" strokeDasharray="4 8"
-          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 3, ease: 'easeInOut', delay: 0.6 }}
-        />
-        <motion.path
-          d="M830 160C646 105 507 166 518 266c14 123 163 137 145 272-18 126-160 176-189 288"
-          stroke="white" strokeWidth="1"
-          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
-          transition={{ duration: reduceMotion ? 0 : 3.4, ease: 'easeInOut', delay: 0.9 }}
-        />
+       <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(8,28,46,.94)_0%,rgba(8,28,46,.66)_42%,rgba(8,28,46,.2)_75%,rgba(8,28,46,.5)_100%)]" />
+       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,28,46,.48)_0%,transparent_26%,transparent_62%,rgba(8,28,46,.96)_100%)]" />
+       <div className="pointer-events-none absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-gold-bright/10 blur-3xl animate-drift" aria-hidden="true" />
+       <svg className="pointer-events-none absolute right-[8%] top-[25%] hidden h-80 w-80 opacity-60 lg:block" viewBox="0 0 320 320" fill="none" aria-hidden="true">
+         <circle cx="160" cy="160" r="116" stroke="#F2B84B" strokeWidth="1" strokeDasharray="2 10" />
+         <circle cx="160" cy="160" r="78" stroke="#F3EAD8" strokeWidth="1" opacity=".5" />
+         <path d="M160 22v276M22 160h276" stroke="#F3EAD8" strokeWidth="1" opacity=".3" />
+         <motion.path
+           d="M64 220C92 190 97 133 136 116c35-15 49 20 72 9 24-12 17-54 54-73"
+           stroke="#53D5D4" strokeWidth="2" strokeLinecap="round" strokeDasharray="3 8"
+           initial={{ pathLength: 0 }} animate={{ pathLength: 1 }}
+           transition={{ duration: reduceMotion ? 0 : 2.8, ease: 'easeInOut', delay: .5 }}
+         />
+         <circle cx="64" cy="220" r="5" fill="#F07B55" />
+         <circle cx="262" cy="52" r="5" fill="#53D5D4" />
        </svg>
-
-       <motion.div
-         aria-hidden="true"
-         className="soft-glow pointer-events-none absolute right-[9%] top-[31%] hidden h-40 w-40 rounded-full border border-gold-bright/30 lg:block"
-         animate={reduceMotion ? {} : { rotate: 360 }}
-         transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-       >
-         <span className="absolute -right-1 top-1/2 h-2 w-2 rounded-full bg-gold-bright shadow-[0_0_18px_4px_rgba(217,170,60,0.8)]" />
-         <span className="absolute inset-5 rounded-full border border-lagoon/50" />
-       </motion.div>
 
       <motion.div style={{ y: contentY, opacity: fade }} className="container-premium relative z-10 flex flex-1 flex-col justify-center pb-40 pt-36 sm:pb-44">
         <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.13 }} className="max-w-4xl">
           <motion.div variants={reveal} transition={{ duration: 0.65 }} className="mb-7 flex items-center gap-3">
             <span className="h-px w-12 bg-gold-bright" aria-hidden="true" />
-           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright">Made for Sri Lanka</span>
+           <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright">Notes from the road</span>
           </motion.div>
 
           <motion.h1 variants={reveal} transition={{ duration: 0.85 }} id="hero-title" className="display-title max-w-[12ch] text-white">
@@ -94,16 +79,16 @@ export default function Hero() {
           <motion.div variants={reveal} transition={{ duration: 0.7 }} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#book"
-              className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-gold-bright px-8 text-sm font-bold text-canopy-950 shadow-[0_18px_44px_-12px_rgba(227,178,60,0.6)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F0C254]"
+              className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-gold-bright px-8 text-sm font-bold text-canopy-950 shadow-[0_18px_44px_-12px_rgba(83,213,212,0.42)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-cinnamon"
             >
-              Start your journey
+              Start a route
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </Link>
             <Link
               href="#tours"
               className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/35 bg-white/5 px-8 text-sm font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-canopy-950"
             >
-              Explore journeys
+              Read the map
             </Link>
           </motion.div>
         </motion.div>

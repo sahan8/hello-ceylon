@@ -18,24 +18,24 @@
 
 | Role | Hex | CSS Variable |
 |------|-----|--------------|
-| Primary | `#0E4638` | `--color-primary` |
+| Primary | `#102A43` | `--color-primary` |
 | On Primary | `#FFFFFF` | `--color-on-primary` |
-| Secondary | `#286B78` | `--color-secondary` |
+| Secondary | `#2A8C9F` | `--color-secondary` |
 | On Secondary | `#FFFFFF` | `--color-on-secondary` |
-| Accent/CTA | `#966100` | `--color-accent` |
+| Accent/CTA | `#A66A12` | `--color-accent` |
 | On Accent/CTA | `#FFFFFF` | `--color-on-accent` |
-| Background | `#FCFAF5` | `--color-background` |
-| Foreground | `#193027` | `--color-foreground` |
+| Background | `#FBF8F1` | `--color-background` |
+| Foreground | `#17202A` | `--color-foreground` |
 | Card | `#FFFFFF` | `--color-card` |
-| Card Foreground | `#193027` | `--color-card-foreground` |
-| Muted | `#F1EBDD` | `--color-muted` |
-| Muted Foreground | `#4F6258` | `--color-muted-foreground` |
-| Border | `#DED8CA` | `--color-border` |
+| Card Foreground | `#17202A` | `--color-card-foreground` |
+| Muted | `#F1E6D4` | `--color-muted` |
+| Muted Foreground | `#536273` | `--color-muted-foreground` |
+| Border | `#D9DEE4` | `--color-border` |
 | Destructive | `#DC2626` | `--color-destructive` |
 | On Destructive | `#FFFFFF` | `--color-on-destructive` |
-| Ring | `#966100` | `--color-ring` |
+| Ring | `#A66A12` | `--color-ring` |
 
-**Color Notes:** Island-inspired canopy green, readable gold, warm shell ivory, and lagoon blue.
+**Color Notes:** Midnight navy, ocean blue, warm saffron, coral accents, and sand neutrals inspired by Sri Lankan coastlines and sunset light.
 
 ### Typography
 
@@ -136,9 +136,9 @@
 }
 
 .input:focus {
-  border-color: #0E4638;
+  border-color: #102A43;
   outline: none;
-  box-shadow: 0 0 0 3px #96610020;
+  box-shadow: 0 0 0 3px #A66A1220;
 }
 ```
 

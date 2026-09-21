@@ -6,6 +6,7 @@ import SectionHeading from './ui/SectionHeading';
 
 export default function Payment() {
   const [tours, setTours] = useState([]);
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
   useEffect(() => {
     fetch('/api/tours')
@@ -22,7 +23,7 @@ export default function Payment() {
           eyebrow="Pricing"
           title="Simple &"
           accent="transparent."
-          description="No hidden fees. Reserve your journey first, then receive clear bank transfer instructions from your guide."
+          description="No hidden fees. Reserve your journey first, then contact your guide to arrange payment."
         />
 
         <motion.div
@@ -39,11 +40,21 @@ export default function Payment() {
               </svg>
             </div>
             <div>
-              <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-gold">Payment method</p>
-              <h3 className="font-display text-2xl text-ink">Bank transfer</h3>
-              <p className="mt-2 max-w-xl text-sm leading-7 text-moss">
-                After your booking is confirmed, your guide will send the verified Sri Lankan bank details and the exact amount to transfer. No card details are collected on this website.
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-gold">After booking</p>
+              <h3 className="font-display text-2xl text-ink">Arrange payment safely</h3>
+              <p className="mt-4 rounded-xl bg-parchment px-4 py-3 text-sm leading-6 text-moss">
+                Payment is arranged directly after your booking is confirmed. No bank or card details are collected on this website.
               </p>
+              {whatsappNumber && (
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello Ceylon! I would like to ask about payment for my booking.')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex min-h-11 items-center rounded-full bg-canopy px-5 text-sm font-bold text-white transition-colors hover:bg-canopy-950"
+                >
+                  Ask about payment →
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
@@ -107,7 +118,7 @@ export default function Payment() {
               <p className="font-display text-lg italic text-ink">
                  Hello Ceylon runs on trust. Every booking is confirmed personally within 24 hours.
               </p>
-              <p className="mt-2 text-xs text-moss">Bank transfer details are shared securely after your journey is confirmed.</p>
+               <p className="mt-2 text-xs text-moss">Payment details are shared directly after your journey is confirmed.</p>
             </div>
           </div>
         </motion.div>

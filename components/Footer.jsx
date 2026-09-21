@@ -6,7 +6,6 @@ import { LogoMark } from './Navbar';
 const links = [
   ['Our story', '#story'],
   ['Journeys', '#tours'],
-  ['Availability', '#availability'],
   ['Book a journey', '#book'],
   ['Guest stories', '#reviews'],
   ['Contact', '#contact'],
@@ -30,7 +29,7 @@ export default function Footer() {
             </h2>
             <Link
               href="#book"
-              className="group mt-9 inline-flex min-h-14 items-center gap-4 rounded-full bg-gold-bright px-8 text-sm font-bold text-canopy-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F0C254]"
+              className="group mt-9 inline-flex min-h-14 items-center gap-4 rounded-full bg-gold-bright px-8 text-sm font-bold text-canopy-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cinnamon"
             >
               Plan your journey
               <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>

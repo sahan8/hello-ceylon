@@ -115,7 +115,7 @@ export default function BookingForm({ selectedDate: initialDate }) {
             <div className="mt-8">
               <button
                 onClick={() => { setIsSuccess(false); setBookingName(''); setBookingReference(''); setStep(1); }}
-                className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-full bg-gold-bright px-7 text-sm font-bold text-canopy-950 transition-colors hover:bg-[#F0C254]"
+                className="inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-full bg-gold-bright px-7 text-sm font-bold text-canopy-950 transition-colors hover:bg-cinnamon"
               >
                 Plan another journey
                 <span aria-hidden="true">→</span>

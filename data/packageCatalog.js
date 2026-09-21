@@ -1,10 +1,10 @@
 module.exports = [
   {
     name: 'Diyaluma Waterfall Tour', category: 'nature', duration: '1 day', price: 12000, currency: 'LKR', capacity: 3, image: '/images/packages/diyaluma-waterfall.webp',
-    description: 'A private waterfall adventure from Ella with a scenic hill-country drive, Upper Diyaluma views, natural pools, and time to swim and relax.',
+    description: 'A waterfall adventure from Ella with a scenic hill-country drive, Upper Diyaluma views, natural pools, and time to swim and relax.',
     locations: ['Ella Town', 'Diyaluma Falls', 'Upper Diyaluma Waterfall', 'Natural infinity pools'],
     highlights: ['Guided Upper Diyaluma hike', 'Natural pool swimming', 'Hill-country viewpoints'],
-    inclusions: ['Private guided tour', 'Flexible schedule', 'Photography and sightseeing time'],
+    inclusions: ['Guided tour from Ella', 'Flexible schedule', 'Photography and sightseeing time'],
   },
   {
     name: 'Ella Full Day Sightseeing Tour', category: 'nature', duration: '1 day', price: 0, priceOnRequest: true, currency: 'LKR', capacity: 3, image: '/images/packages/ella-full-day.avif',
@@ -53,14 +53,14 @@ module.exports = [
     description: 'A calm cultural and spiritual visit to Mahamewuna Bhawana Asapuwa, its white temple, meditation grounds, and peaceful surroundings.',
     locations: ['Ella Town', 'Mahamewuna Bhawana Asapuwa', 'White Temple Area', 'Meditation grounds'],
     highlights: ['Quiet reflection time', 'Buddhist culture and architecture', 'Respectful monastery visit'],
-    inclusions: ['Private transport from Ella', 'Cultural context', 'Suitable for all ages'],
+    inclusions: ['Transport from Ella', 'Cultural context', 'Suitable for all ages'],
   },
   {
     name: 'Nine Arch Bridge Tour', category: 'nature', duration: '1 day', price: 2500, currency: 'LKR', capacity: 6, image: '/images/packages/nine-arch-bridge.webp',
-    description: 'A relaxed private tuk-tuk visit to Ella\'s iconic Nine Arch Bridge with railway walks, green hill views, and flexible train-spotting time.',
+    description: 'A relaxed tuk-tuk visit to Ella\'s iconic Nine Arch Bridge with railway walks, green hill views, and flexible train-spotting time.',
     locations: ['Ella Town', 'Nine Arch Bridge', 'Ella Green Hill Area', 'Ella railway viewpoints'],
     highlights: ['Historic bridge visit', 'Train viewing opportunity', 'Classic Ella photography spots'],
-    inclusions: ['Private tuk-tuk service', 'Return transport from Ella', 'Flexible visiting time'],
+    inclusions: ['Tuk-tuk service', 'Return transport from Ella', 'Flexible visiting time'],
   },
   {
     name: 'Pallewela Waterfall Tour', category: 'nature', duration: '1 day', price: 6500, currency: 'LKR', capacity: 3, image: '/images/packages/pallewela-waterfall.webp',
@@ -74,21 +74,21 @@ module.exports = [
     description: 'A short guided climb to Ravana Cave near Ella, combining Ramayana-linked history, hill-country views, and local legends.',
     locations: ['Ella Town', 'Ravana Cave', 'Hill-country viewpoints'],
     highlights: ['Legendary cave visit', 'Short guided climb', 'Ramayana trail storytelling'],
-    inclusions: ['Private tuk-tuk tour', 'Return transport', 'Climb assistance'],
+    inclusions: ['Tuk-tuk tour', 'Return transport', 'Climb assistance'],
   },
   {
     name: 'Ravana Waterfall Tour', category: 'nature', duration: '1 day', price: 3000, currency: 'LKR', capacity: 3, image: '/images/packages/ravana-waterfall.webp',
     description: 'An easy sightseeing trip from Ella to Ravana Waterfall with scenic viewpoints and an optional visit to Ravana Cave.',
     locations: ['Ella Town', 'Ravana Waterfall', 'Ravana Cave', 'Ella Rock surroundings'],
     highlights: ['Waterfall photography', 'Optional cave visit', 'Easy sightseeing for all ages'],
-    inclusions: ['Private tuk-tuk tour', 'Return transport', 'Flexible visit time'],
+    inclusions: ['Tuk-tuk tour', 'Return transport', 'Flexible visit time'],
   },
   {
     name: 'Secret Waterfall Tour', category: 'nature', duration: '1 day', price: 6000, currency: 'LKR', capacity: 3, image: '/images/packages/secret-waterfall.webp',
     description: 'A hidden waterfall escape through Ella countryside with a peaceful natural setting, optional swimming, and fresh mountain air.',
     locations: ['Ella Town', 'Secret Waterfall', 'Hidden waterfall area', 'Ella countryside'],
     highlights: ['Quiet hidden-waterfall experience', 'Optional swimming', 'Countryside photography'],
-    inclusions: ['Private tuk-tuk tour', 'Return transport', 'Flexible visit time'],
+    inclusions: ['Tuk-tuk tour', 'Return transport', 'Flexible visit time'],
   },
   {
     name: 'Udawalawe National Park Safari', category: 'nature', duration: '1 day', price: 0, priceOnRequest: true, currency: 'LKR', capacity: 6, image: '/images/packages/udawalawe-safari.webp',

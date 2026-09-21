@@ -12,10 +12,10 @@ export default function MapSection() {
       <div className="container-premium">
         <div className="relative overflow-hidden rounded-[2rem] border border-line bg-white px-6 py-12 paper-edge sm:px-12 lg:px-16 lg:py-16">
           <svg className="absolute -right-24 -top-24 h-96 w-96 opacity-[0.07]" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-            <circle cx="200" cy="200" r="160" stroke="#0C3B2E" />
-            <circle cx="200" cy="200" r="120" stroke="#0C3B2E" />
-            <circle cx="200" cy="200" r="80" stroke="#0C3B2E" />
-            <path d="M200 15v370M15 200h370" stroke="#0C3B2E" />
+            <circle cx="200" cy="200" r="160" stroke="#102B31" />
+            <circle cx="200" cy="200" r="120" stroke="#102B31" />
+            <circle cx="200" cy="200" r="80" stroke="#102B31" />
+            <path d="M200 15v370M15 200h370" stroke="#102B31" />
           </svg>
 
           <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">

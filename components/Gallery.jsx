@@ -4,15 +4,23 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
+const fallbackImages = [
+  { _id: 'dummy-diyaluma', url: '/images/packages/diyaluma-waterfall.webp', alt: 'Diyaluma waterfall and hill-country landscape' },
+  { _id: 'dummy-ella', url: '/images/packages/ella-full-day.avif', alt: 'Misty Ella highlands and scenic roads' },
+  { _id: 'dummy-nine-arch', url: '/images/packages/nine-arch-bridge.webp', alt: 'Nine Arch Bridge surrounded by green hills' },
+  { _id: 'dummy-lipton', url: '/images/packages/lipton-seat.webp', alt: 'Tea country views from Lipton Seat' },
+  { _id: 'dummy-yala', url: '/images/packages/yala-safari.webp', alt: 'Wildlife and open landscapes in Sri Lanka' },
+];
+
 export default function Gallery() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(fallbackImages);
   const [active, setActive] = useState(0);
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     fetch('/api/gallery')
       .then(response => response.ok ? response.json() : Promise.reject())
-      .then(data => { if (data.success) setImages(data.images); })
+      .then(data => { if (data.success && data.images.length) setImages(data.images); })
       .catch(() => {});
   }, []);
 
@@ -21,8 +29,6 @@ export default function Gallery() {
     const timer = window.setInterval(() => setActive(current => (current + 1) % images.length), 4200);
     return () => window.clearInterval(timer);
   }, [images.length, reduceMotion]);
-
-  if (!images.length) return null;
 
   const move = direction => setActive((active + direction + images.length) % images.length);
 

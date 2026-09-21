@@ -25,7 +25,7 @@ export default function MobileDock() {
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-x-3 bottom-3 z-40 lg:hidden"
         >
-          <div className="glass-dark flex items-center gap-2 rounded-2xl p-2 shadow-[0_16px_40px_-12px_rgba(6,35,27,0.7)]">
+          <div className="glass-dark flex items-center gap-2 rounded-2xl p-2 shadow-[0_16px_40px_-12px_rgba(8,28,46,0.7)]">
             {number && (
               <a
                 href={`https://wa.me/${number}`}
@@ -47,7 +47,7 @@ export default function MobileDock() {
             </Link>
             <Link
               href="#book"
-              className="flex h-12 flex-[1.4] items-center justify-center rounded-xl bg-gold-bright text-sm font-bold text-canopy-950 transition-colors hover:bg-[#F0C254]"
+              className="flex h-12 flex-[1.4] items-center justify-center rounded-xl bg-gold-bright text-sm font-bold text-canopy-950 transition-colors hover:bg-cinnamon"
             >
               Plan my trip →
             </Link>

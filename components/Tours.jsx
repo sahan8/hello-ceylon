@@ -52,7 +52,7 @@ export default function Tours() {
              <SectionHeading eyebrow="Choose a place" title="Find your" accent="next view." />
           </div>
           <p className="max-w-2xl text-base leading-7 text-moss lg:justify-self-end">
-            Every experience below comes from the live catalogue — real pricing, real duration, confirmed personally. Pick one, or use it as the starting point for something tailor-made.
+             Places worth taking your time with. Pick a starting point, then let the day find its own shape.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export default function Tours() {
                   key={tour._id}
                   variants={revealUp}
                   transition={{ duration: reduceMotion ? 0 : motionTokens.duration.reveal, ease: motionTokens.ease.out }}
-                  className="card-lift group relative flex min-h-[480px] flex-col overflow-hidden rounded-[1.75rem] border border-line bg-white p-7"
+                  className="card-lift group relative flex min-h-[480px] flex-col overflow-hidden rounded-[1.1rem] border border-line bg-white p-7 shadow-none"
                 >
                   {tour.image && (
                     <div className="relative -mx-7 -mt-7 mb-7 h-48 overflow-hidden bg-parchment">
