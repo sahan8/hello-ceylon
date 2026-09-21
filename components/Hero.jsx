@@ -58,22 +58,19 @@ export default function Hero() {
          <circle cx="262" cy="52" r="5" fill="#53D5D4" />
        </svg>
 
-      <motion.div style={{ y: contentY, opacity: fade }} className="container-premium relative z-10 flex flex-1 flex-col justify-center pb-40 pt-36 sm:pb-44">
+       <motion.div style={{ y: contentY, opacity: fade }} className="container-premium relative z-10 flex flex-1 flex-col justify-end pb-36 pt-44 sm:pb-44 sm:pt-52">
         <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: reduceMotion ? 0 : 0.13 }} className="max-w-4xl">
           <motion.div variants={reveal} transition={{ duration: 0.65 }} className="mb-7 flex items-center gap-3">
             <span className="h-px w-12 bg-gold-bright" aria-hidden="true" />
            <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold-bright">Notes from the road</span>
           </motion.div>
 
-          <motion.h1 variants={reveal} transition={{ duration: 0.85 }} id="hero-title" className="display-title max-w-[12ch] text-white">
-            Hello,
-            <span className="block">
-              <em className="wonk gradient-text not-italic">Ceylon.</em>
-            </span>
-          </motion.h1>
+           <motion.h1 variants={reveal} transition={{ duration: 0.85 }} id="hero-title" className="display-title max-w-[10ch] text-shell">
+            Move like<br /><em className="gradient-text not-italic">you mean it.</em>
+           </motion.h1>
 
           <motion.p variants={reveal} transition={{ duration: 0.7 }} className="mt-7 max-w-xl text-base leading-7 text-white/80 sm:text-lg sm:leading-8">
-             Tea hills, waterfalls, wildlife and coastlines. Choose a place, pick a date, and let the island do the rest.
+             A considered way through Sri Lanka: good roads, local eyes, and enough room for the day to surprise you.
           </motion.p>
 
           <motion.div variants={reveal} transition={{ duration: 0.7 }} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
